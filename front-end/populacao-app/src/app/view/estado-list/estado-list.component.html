@@ -1,0 +1,61 @@
+<h3>Estados </h3>
+
+<form>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <select [(ngModel)]="estado.id" (change)="listarEstados()" id="inputTipo" name="tipo" class="form-control">
+        <option value="0">Listar Todos...</option>
+        <option *ngFor="let e of estadosComboBox" [value]="e.id">
+          {{e.nome}}
+        </option>
+      </select>
+    </div>
+
+  </div>
+</form>
+
+
+<ul class="list-group" *ngFor="let item of estados">
+  <li class="list-group-item">
+    <div class="card" >
+      <div class="card-header">{{item.nome}}</div>
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col-sm">
+            <h5 class="card-title">Sigla: <strong>{{item.uf}}</strong></h5>
+            <h5 class="card-text">População total: <strong>{{item.populacao | number}}</strong> habitantes</h5>
+            <h5 class="card-text">Custo Populacional: <strong>{{item.custoPopulacional | currency:'R$'}}</strong></h5>
+          </div>
+          <div class="col-sm">
+            <div class="imagePreview" >
+              <img src="{{item.bandeira}}" >
+            </div>
+          </div>
+        </div>
+
+
+        
+      </div>
+    </div>
+
+  </li>
+</ul>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+  

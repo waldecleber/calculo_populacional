@@ -1,0 +1,34 @@
+<table class="table"  >
+    <thead class="thead-dark" >
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">População</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let c of cidades ; let i = index" >
+            <th scope="row">{{c.id}}</th>
+            <td>{{c.nome}}</td>
+            <td>{{c.populacao | number}}</td>
+            <td> 
+              <div class="btn-group mx-auto" role="toolbar" aria-label="Button group">
+                          <!-- <button type="button" class="btn btn-success mr-2" [routerLink]="['/cliente-form', item.id]">Editar</button>
+                          
+                          <button type="button" class="btn btn-danger mr-2" data-toggle="modal" data-target="#exampleModal" (click)="onSelectCliente(item)">Excluir</button>
+                          
+                          <button type="button" class="btn btn-dark mr-2" [routerLink]="['/emprestimo-form', item.id]" data-toggle="modal" data-target="#exampleModal" (click)="onSelectCliente(item)">Simular Empréstimo</button> -->
+
+              </div>
+          </td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+<div class="row">
+    <button routerLink="/cidade-form" routerLinkActive="active"  type="button" class="btn btn-primary">Nova Cidade</button>
+  </div>
+  

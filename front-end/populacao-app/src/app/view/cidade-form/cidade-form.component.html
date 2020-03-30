@@ -1,0 +1,39 @@
+<h3>Dados da Cidade</h3>
+<hr>
+<form (ngSubmit)="salvarCidade()" #frm="ngForm">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputNome">Nome</label>
+            <input type="text" [(ngModel)]="cidade.nome" name="nome" class="form-control" id="inputNome"
+                placeholder="Nome" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPopulacao">Populacao</label>
+            <input type="text" [(ngModel)]="cidade.populacao" name="populacao" class="form-control" id="inputPopulacao"
+                placeholder="População" required>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEstado">Estado</label>
+            <select [(ngModel)]="estado" id="inputEstado" name="tipo" class="form-control">
+                <option selected value="0">Listar Todos...</option>
+                <option *ngFor="let e of estados" [ngValue]="e">
+                    {{e.nome}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="btn-group mx-auto" role="toolbar" aria-label="Button group">
+        <button [disabled]="frm.invalid" type="submit" class="btn btn-primary mr-2">Salvar</button>
+        <button routerLink="" routerLinkActive="active" type="button" class="btn btn-light mr-2">Cancelar</button>
+    </div>
+
+</form>
